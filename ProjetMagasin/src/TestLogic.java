@@ -50,7 +50,7 @@ public class TestLogic {
         c1.addArticle(riz, 1);
         c1.addArticle(pomme, 3);
 
-        System.out.println(c1.calculerPrixPanier());
+        //System.out.println(c1.passageCaisse());
         System.out.println(c1.getPanier());
     }
 
@@ -71,20 +71,4 @@ public class TestLogic {
         System.out.println(nombre);
     }
 
-    @Test
-    public void jsp(){
-        double nombre = 3.14159;
-
-// Créer un objet DecimalFormat avec le format souhaité
-        DecimalFormat formatter = new DecimalFormat("#0.00");
-
-// Appliquer le format au nombre
-        String resultat = formatter.format(nombre);
-
-// Convertir la chaîne de caractères en double
-        double nombreFormate = Double.parseDouble(resultat);
-
-// Afficher le résultat
-        System.out.println(nombreFormate); // affiche 3.14
-    }
 }

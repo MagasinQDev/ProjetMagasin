@@ -13,7 +13,15 @@ public class Magasin {
     public String getNomMagasin() {
         return this.nomMagasin;
     }
-    
+
+    public void setArgent(double argent) {
+        this.argent = argent;
+    }
+
+    public double getArgent() {
+        return argent;
+    }
+
     public Map<String, Article> getStock() {
         return this.stock;
     }
@@ -46,7 +54,7 @@ public class Magasin {
     }
 
     public double calculArgentRestant(){
-        return this.argent;
+        return Math.round(this.argent);
     }
 }
 

@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class main {
 
@@ -35,33 +32,51 @@ public class main {
         System.out.println(m1.calculArgentRestant());
         System.out.println(pain.getQuantite());
 
+
+        int conteurClient = 0;
+        int conteurClientMecontant = 0;
+
         //HORS VAGUE
-        for (int i = 0; i < 18; ++i){
-            for (int j = 0; i < 15; ++i){
+        for (int i = 0; i < 18; ++i) {
+            for (int j = 0; i < 15; ++i) {
                 // On générer un nombre aléatoire pour savoir ce quel article le client prend
                 int quelArticle = rand.nextInt(listArticleMagasin.size());
                 // On générer un nombre aléatoire pour savoir combien le client en prend
-
                 int quelQuantite = rand.nextInt(5);
-                new Client(i, m1).addArticle(listArticleMagasin.get(quelArticle), quelQuantite);
+
+                Client c1 = new Client(i, m1);
+                c1.addArticle(listArticleMagasin.get(quelArticle), quelQuantite);
+                c1.passageCaisse();
+                conteurClient += 1;
+                int val = c1.isEstMecontent() ? 1 : 0;
+                conteurClientMecontant += val;
+
             }
         }
         //Vague
-        for (int i = 0; i < 230; ++i){
+        for (int i = 0; i < 230; ++i) {
             // On générer un nombre aléatoire pour savoir ce quel article le client prend
             int quelArticle = rand.nextInt(listArticleMagasin.size());
             // On générer un nombre aléatoire pour savoir combien le client en prend
-
             int quelQuantite = rand.nextInt(5);
-            new Client(i, m1).addArticle(listArticleMagasin.get(quelArticle), quelQuantite);
+
+            Client c1 = new Client(i, m1);
+            c1.addArticle(listArticleMagasin.get(quelArticle), quelQuantite);
+            c1.passageCaisse();
+            conteurClient += 1;
+            int val = c1.isEstMecontent() ? 1 : 0;
+            conteurClientMecontant += val;
         }
 
-        System.out.println("--");
-        for(int i = 0; i < listArticleMagasin.size(); i++){
-            System.out.print(listArticleMagasin.get(i).getQuantite());
-            System.out.print(" ");
-        }
-
+        System.out.println("------------------");
+        System.out.println("Vague n°1");
+        System.out.print("Argent restant : ");
+        System.out.println(m1.calculArgentRestant());
+        System.out.print("nombre Client : ");
+        System.out.println(conteurClient);
+        System.out.print("pourcentage Client mécontant: ");
+        System.out.print((conteurClientMecontant * 100) / conteurClient);
+        System.out.println("%");
 
     }
 }
