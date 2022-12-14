@@ -65,8 +65,7 @@ public class TestLogic {
 
         m1.addArticle(pates ,riz, pomme);
 
-
-        double nombre = m1.calculBenefice();
+        double nombre = m1.calculArgentRestant();
 
         // Appliquer le format au nombre
         System.out.println(nombre);

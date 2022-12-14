@@ -61,7 +61,7 @@ public class Client {
     public double calculerPrixPanier(){
         double prix = 0;
         for (Map.Entry<String, Integer> articleActuel : panier.entrySet()) {
-            prix += articleActuel.getValue() * this.magasin.getStock().get(articleActuel.getKey()).getPrixVente();
+            prix += (double) articleActuel.getValue() * this.magasin.getStock().get(articleActuel.getKey()).getPrixVente();
         }
         return prix;
     }
@@ -69,9 +69,5 @@ public class Client {
     public void afficherPanier() {
         System.out.println();
     }
-    /*
-    public void allerEncaisse(){
-
-    }*/
 
 }

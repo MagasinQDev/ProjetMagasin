@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class main {
@@ -6,9 +9,6 @@ public class main {
 
         // create instance of Random class
         Random rand = new Random();
-        // Generate random integers in range 0 to 999
-        int rand_int1 = rand.nextInt(14);
-        System.out.print(rand_int1);
 
         Magasin m1 = new Magasin();
         Article pates = new Article("pates", 1.12, 0.9, 1, 20, 50);
@@ -26,10 +26,41 @@ public class main {
         Article shampoing = new Article("shampoing",1.57,1.2,4,40,60);
         Article lessive = new Article("lessive",4.4,3.8,5,45,60);
 
+        List<Article> listArticleMagasin = Arrays.asList( pates ,riz, pain, pomme, haricots, poisson, steakhache, champagne, eau, coca, yahourt ,fromage, shampoing, lessive);
+
         m1.addArticle(pates ,riz, pain, pomme, haricots, poisson, steakhache, champagne, eau, coca, yahourt ,fromage, shampoing, lessive);
-        /*for (int i = 0; i < 50; ++i){
-            Client c1 = new Client(0, m1);
-        }*/
+
+        // Appliquer le format au nombre
+        System.out.print("Argent restant avant ouverture : ");
+        System.out.println(m1.calculArgentRestant());
+        System.out.println(pain.getQuantite());
+
+        //HORS VAGUE
+        for (int i = 0; i < 18; ++i){
+            for (int j = 0; i < 15; ++i){
+                // On générer un nombre aléatoire pour savoir ce quel article le client prend
+                int quelArticle = rand.nextInt(listArticleMagasin.size());
+                // On générer un nombre aléatoire pour savoir combien le client en prend
+
+                int quelQuantite = rand.nextInt(5);
+                new Client(i, m1).addArticle(listArticleMagasin.get(quelArticle), quelQuantite);
+            }
+        }
+        //Vague
+        for (int i = 0; i < 230; ++i){
+            // On générer un nombre aléatoire pour savoir ce quel article le client prend
+            int quelArticle = rand.nextInt(listArticleMagasin.size());
+            // On générer un nombre aléatoire pour savoir combien le client en prend
+
+            int quelQuantite = rand.nextInt(5);
+            new Client(i, m1).addArticle(listArticleMagasin.get(quelArticle), quelQuantite);
+        }
+
+        System.out.println("--");
+        for(int i = 0; i < listArticleMagasin.size(); i++){
+            System.out.print(listArticleMagasin.get(i).getQuantite());
+            System.out.print(" ");
+        }
 
 
     }

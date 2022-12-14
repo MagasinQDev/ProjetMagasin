@@ -22,13 +22,6 @@ public class Magasin {
         return this.listCaissiers;
     }
 
-    /*
-    public void addArticle(Article article) {
-        this.stock.put(article.getNom(), article);
-        this.argent -= article.getPrixAchat();
-    }*/
-
-
     public void addArticle(Article... articles) {
 
         // Créer un objet DecimalFormat avec le format souhaité
@@ -37,25 +30,9 @@ public class Magasin {
         for(Article article : articles){
             this.stock.put(article.getNom(), article);
             for (int i = 0; i < article.getQuantite(); ++i){
-                this.argent -= article.getPrixAchat();
-
-                this.argent = Double.parseDouble(formatter.format(this.argent));
+                this.argent -= Math.round(article.getPrixAchat());
             }
         }
-    }
-    /*
-    public void addArticle(Article... articles) {
-        for(Article article : articles){
-            for (int i = 0; i < 40; ++i){
-                this.stock.put(article.getNom(), article);
-                System.out.println(article.getPrixAchat());
-                this.argent -= article.getPrixAchat();
-            }
-        }
-    }*/
-
-    public void addCaissier(Caissier caissier) {
-        this.listCaissiers.add(caissier);
     }
 
     public void addCaissier(Caissier... caissiers) {
@@ -68,7 +45,7 @@ public class Magasin {
 
     }
 
-    public double calculBenefice(){
+    public double calculArgentRestant(){
         return this.argent;
     }
 }
