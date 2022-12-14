@@ -19,7 +19,30 @@ public class Client {
     public Map<String, Integer> getPanier() {
         return this.panier;
     }
-
+    public void addArticle(Article article, int quantite) {
+        //si le stock ne contient pas l'article
+        if(!magasin.getStock().containsValue(article)) {
+            System.out.println("L'article " + article.getNom() + " n'est pas disponible dans ce magasin !");
+        }
+        //si la quantite dispo est supérieure à la demande
+        else if(article.getQuantite() >= quantite) {
+            //si le panier contient déjà l'article demandé
+            if(!this.panier.containsKey(article.getNom())) {
+                //on enleve du stock la quantite prise
+                article.setQuantite(article.getQuantite() - quantite);
+                this.panier.put(article.getNom(), quantite);
+            }
+            else {
+                this.panier.replace(article.getNom(), this.panier.get(article.getNom()) + quantite);
+            }
+        }
+        //si stock article < quantité demandée
+        else {
+            //note: peut-être voir si on fait pas en sorte que le client prenne qd mm l'article dans la quantité qu'il reste
+            System.out.println("L'article " + article.getNom() + " n'est pas disponible dans la quantité demandée !");
+        }
+    }
+    /*
     public void addArticle(Article article, int quantite) {
             //on regarde si le stock contient l'article et si la quantite dispo est supérieure à la demande
             if(magasin.getStock().containsValue(article) && article.getQuantite() >= quantite) {
@@ -33,7 +56,7 @@ public class Client {
                     this.panier.replace(article.getNom(), this.panier.get(article.getNom()) + quantite);
                 }
             }
-    }
+    }*/
 
     public double calculerPrixPanier(){
         double prix = 0;
@@ -46,5 +69,9 @@ public class Client {
     public void afficherPanier() {
         System.out.println();
     }
+    /*
+    public void allerEncaisse(){
+
+    }*/
 
 }

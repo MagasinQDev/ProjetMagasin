@@ -1,6 +1,15 @@
+import java.util.Random;
+
 public class main {
 
     public static void main(String[] args) {
+
+        // create instance of Random class
+        Random rand = new Random();
+        // Generate random integers in range 0 to 999
+        int rand_int1 = rand.nextInt(14);
+        System.out.print(rand_int1);
+
         Magasin m1 = new Magasin();
         Article pates = new Article("pates", 1.12, 0.9, 1, 20, 50);
         Article riz = new Article("riz", 1.29, 1, 2, 25, 40);
@@ -17,6 +26,11 @@ public class main {
         Article shampoing = new Article("shampoing",1.57,1.2,4,40,60);
         Article lessive = new Article("lessive",4.4,3.8,5,45,60);
 
-        m1.
+        m1.addArticle(pates ,riz, pain, pomme, haricots, poisson, steakhache, champagne, eau, coca, yahourt ,fromage, shampoing, lessive);
+        /*for (int i = 0; i < 50; ++i){
+            Client c1 = new Client(0, m1);
+        }*/
+
+
     }
 }
