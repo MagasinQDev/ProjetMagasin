@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class main {
+public class Main {
 
     public static void main(String[] args) {
 
@@ -39,8 +39,8 @@ public class main {
 
             compteurVague += 1;
 
-            int conteurClient = 0;
-            int conteurClientMecontant = 0;
+            int compteurClient = 0;
+            int compteurClientMecontant = 0;
 
             //HORS VAGUE
             for (int i = 0; i < 18; ++i) {
@@ -53,9 +53,9 @@ public class main {
                     Client c1 = new Client(i, m1);
                     c1.addArticle(listArticleMagasin.get(quelArticle), quelQuantite);
                     c1.passageCaisse();
-                    conteurClient += 1;
+                    compteurClient += 1;
                     int val = c1.isEstMecontent() ? 1 : 0;
-                    conteurClientMecontant += val;
+                    compteurClientMecontant += val;
 
                 }
             }
@@ -69,9 +69,9 @@ public class main {
                 Client c1 = new Client(i, m1);
                 c1.addArticle(listArticleMagasin.get(quelArticle), quelQuantite);
                 c1.passageCaisse();
-                conteurClient += 1;
+                compteurClient += 1;
                 int val = c1.isEstMecontent() ? 1 : 0;
-                conteurClientMecontant += val;
+                compteurClientMecontant += val;
             }
 
             System.out.println("------------------");
@@ -79,19 +79,18 @@ public class main {
             System.out.println(compteurVague);
             System.out.print("Argent restant : ");
             System.out.println(m1.calculArgentRestant());
-            System.out.print("nombre Client : ");
-            System.out.println(conteurClient);
-            System.out.print("pourcentage Client mécontant: ");
-            System.out.print((conteurClientMecontant * 100) / conteurClient);
+            System.out.print("Nombre de clients : ");
+            System.out.println(compteurClient);
+            System.out.print("Pourcentage de clients mécontents: ");
+            System.out.print((compteurClientMecontant * 100) / compteurClient);
             System.out.println("%");
 
             Scanner monScanner = new Scanner(System.in);  // Create a Scanner object
-            System.out.println("pour continuer appuyer sur f");
+            System.out.println("pour continuer, écrivez C");
 
             String reponse = monScanner.nextLine();  // Read user input
-            System.out.println(reponse);
-            if (reponse != "c"){
-                System.out.println("ok on ferme");
+            if (!reponse.equalsIgnoreCase("c")){
+                System.out.println("OK on ferme !");
                 continuer = false;
             }
         }

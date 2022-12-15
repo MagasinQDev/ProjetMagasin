@@ -56,5 +56,12 @@ public class Magasin {
     public double calculArgentRestant(){
         return Math.round(this.argent);
     }
+
+    public void restock() {
+        for (Map.Entry<String, Article> articleActuel : this.stock.entrySet()) {
+            articleActuel.getValue().restock();
+        }
+    }
 }
+
 
