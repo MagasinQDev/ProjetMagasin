@@ -24,6 +24,7 @@ public class Client {
     public Map<String, Integer> getPanier() {
         return this.panier;
     }
+
     public void addArticle(Article article, int quantite) {
         //si le stock ne contient pas l'article
         if(!magasin.getStock().containsValue(article)) {
@@ -43,9 +44,18 @@ public class Client {
         }
         //si l'article est disponible mais pas dans la quantité voulue
         else {
-            //note: peut-être voir si on fait pas en sorte que le client prenne qd mm l'article dans la quantité qu'il reste
+            //Le Client est mécontant
             this.estMecontent =  true;
-            System.out.println("PROBLEME STOCK: L'article " + article.getNom() + " n'est pas disponible dans la quantité demandée !");
+
+            //Si il n'y a plus de stock
+            if(article.getQuantite() == 0){
+                System.out.println("PROBLEME STOCK: L'article " + article.getNom() + " n'est pas disponible dans la quantité demandée !");
+            }
+            //Si non on prend les derniers article restant
+            else{
+                this.panier.replace(article.getNom(), this.panier.get(article.getNom()) + article.getQuantite());
+            }
+
         }
     }
 
