@@ -37,11 +37,6 @@ public class Main {
         int compteurVague = 0;
 
         while(continuer) {
-            ///// RESTOCK
-            System.out.println("-------RESTOCK-------");
-            m1.restock(compteurVague);
-            System.out.println("------------------");
-            /////
 
             compteurVague += 1;
 
@@ -91,13 +86,20 @@ public class Main {
             System.out.print((compteurClientMecontent * 100) / compteurClient);
             System.out.println("%");
 
-            Scanner monScanner = new Scanner(System.in);  // Create a Scanner object
+            Scanner monScanner = new Scanner(System.in);  // Créer l'objet scanner
             System.out.println("pour continuer, écrivez C");
 
-            String reponse = monScanner.nextLine();  // Read user input
+            String reponse = monScanner.nextLine();  // Lire l'entée de l'utilisateur
             if (!reponse.equalsIgnoreCase("c")){
                 System.out.println("OK on ferme !");
                 continuer = false;
+            }
+            else{
+                ///// RESTOCK
+                System.out.println("-------RESTOCK-------");
+                m1.restock(compteurVague);
+                System.out.println("------------------");
+                /////
             }
         }
     }
