@@ -36,5 +36,5 @@ Le résumé d'une journée se présente de la manière suivante (exemple) :
  --
 (1) Ici, le champ n°1 désigne le numéro de la journée (et donc le numéro de la vague car il y a 1 vague/jour).  
 (2) Le champ n°2 désigne l'argent restant que possède le magasin.  
-(3) Le champ n°3 désigne le nombre de client ayant réalisé un achat dans la magasin dans la journée.  
-(4) Pour finir, le champ n°4 désigne le pourcentage de client mécontent (qui augmente lorsque un article est en rupture de stock ou qu'il y a de l'attente à la caisse).  
+(3) Le champ n°3 désigne le nombre de client ayant réalisé un achat dans le magasin dans la journée.  
+(4) Pour finir, le champ n°4 désigne le pourcentage de client mécontent (qui augmente lorsqu'un article est en rupture de stock ou qu'il y a de l'attente à la caisse).  
