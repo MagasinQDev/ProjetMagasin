@@ -45,7 +45,7 @@ public class Client {
         else {
             //note: peut-être voir si on fait pas en sorte que le client prenne qd mm l'article dans la quantité qu'il reste
             this.estMecontent =  true;
-            System.out.println("L'article " + article.getNom() + " n'est pas disponible dans la quantité demandée !");
+            System.out.println("PROBLEME STOCK: L'article " + article.getNom() + " n'est pas disponible dans la quantité demandée !");
         }
     }
 

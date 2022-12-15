@@ -57,9 +57,13 @@ public class Magasin {
         return Math.round(this.argent);
     }
 
-    public void restock() {
-        for (Map.Entry<String, Article> articleActuel : this.stock.entrySet()) {
-            articleActuel.getValue().restock();
+    public void restock(int numeroVague) {
+        for (Map.Entry<String, Article> article : this.stock.entrySet()) {
+            Article articleActuel = article.getValue();
+            if(numeroVague > 0 && (numeroVague % articleActuel.getTempsRestock()) == 0) {
+                articleActuel.restock();
+                System.out.println("RESTOCK: Restock de " + articleActuel.getNom() + ", quantite restockee: " + articleActuel.getNombreRestock() + ", quantite totale: " + articleActuel.getQuantite());
+            }
         }
     }
 }

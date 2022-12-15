@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // create instance of Random class
+        // creation d'un generateur de nombres pseudo-aleatoires
         Random rand = new Random();
 
         Magasin m1 = new Magasin();
@@ -28,19 +28,25 @@ public class Main {
         m1.addArticle(pates ,riz, pain, pomme, haricots, poisson, steakhache, champagne, eau, coca, yahourt ,fromage, shampoing, lessive);
 
         // Appliquer le format au nombre
+        System.out.println("------------------");
         System.out.print("Argent restant avant ouverture : ");
         System.out.println(m1.calculArgentRestant());
-        System.out.println(pain.getQuantite());
+        //System.out.println(pain.getQuantite());
 
         boolean continuer = true;
         int compteurVague = 0;
 
         while(continuer) {
+            ///// RESTOCK
+            System.out.println("-------RESTOCK-------");
+            m1.restock(compteurVague);
+            System.out.println("------------------");
+            /////
 
             compteurVague += 1;
 
             int compteurClient = 0;
-            int compteurClientMecontant = 0;
+            int compteurClientMecontent = 0;
 
             //HORS VAGUE
             for (int i = 0; i < 18; ++i) {
@@ -55,7 +61,7 @@ public class Main {
                     c1.passageCaisse();
                     compteurClient += 1;
                     int val = c1.isEstMecontent() ? 1 : 0;
-                    compteurClientMecontant += val;
+                    compteurClientMecontent += val;
 
                 }
             }
@@ -71,7 +77,7 @@ public class Main {
                 c1.passageCaisse();
                 compteurClient += 1;
                 int val = c1.isEstMecontent() ? 1 : 0;
-                compteurClientMecontant += val;
+                compteurClientMecontent += val;
             }
 
             System.out.println("------------------");
@@ -82,7 +88,7 @@ public class Main {
             System.out.print("Nombre de clients : ");
             System.out.println(compteurClient);
             System.out.print("Pourcentage de clients mécontents: ");
-            System.out.print((compteurClientMecontant * 100) / compteurClient);
+            System.out.print((compteurClientMecontent * 100) / compteurClient);
             System.out.println("%");
 
             Scanner monScanner = new Scanner(System.in);  // Create a Scanner object
