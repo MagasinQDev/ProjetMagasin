@@ -10,6 +10,7 @@ public class AgentEntretien extends Employe {
 
     /**
      * Crée un agent d'entretien avec un identifiant
+     *
      * @param id l'identifiant attribué
      */
     public AgentEntretien(int id) {
@@ -18,6 +19,7 @@ public class AgentEntretien extends Employe {
 
     /**
      * Permet d'obtenir le salaire de l'agent d'entretien
+     *
      * @return le salaire de l'agent d'entretien
      */
     public int getSalaire() {
@@ -26,6 +28,7 @@ public class AgentEntretien extends Employe {
 
     /**
      * Permet d'attribuer un salaire à l'agent d'entretien
+     *
      * @param salaire le salaire à attribuer à l'agent d'entretien
      */
     public void setSalaire(int salaire) {

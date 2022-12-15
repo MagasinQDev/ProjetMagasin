@@ -38,6 +38,7 @@ public class Client {
 
     /**
      * Permet d'obtenir l'état de satisfaction du client
+     *
      * @return l'état de satisfaction du client
      */
     public boolean isEstMecontent() {
@@ -46,6 +47,7 @@ public class Client {
 
     /**
      * Permet d'obtenir l'identifiant du client
+     *
      * @return l'identifiant du client
      */
     public int getId() {
@@ -54,6 +56,7 @@ public class Client {
 
     /**
      * Permet d'obtenir le panier du client
+     *
      * @return le panier du client
      */
     public Map<String, Integer> getPanier() {
@@ -62,7 +65,8 @@ public class Client {
 
     /**
      * Permet d'ajouter un article au panier
-     * @param article l'article à ajouter au panier
+     *
+     * @param article  l'article à ajouter au panier
      * @param quantite la quantité de l'article à ajouter au panier
      */
     public void addArticle(Article article, int quantite) {

@@ -11,6 +11,7 @@ public class Caissier extends Employe {
 
     /**
      * Crée un caissier avec un identifiant
+     *
      * @param id l'identifiant attribué
      */
     public Caissier(int id) {
@@ -19,6 +20,7 @@ public class Caissier extends Employe {
 
     /**
      * Permet d'obtenir le salaire du caissier
+     *
      * @return le salaire de l'agent d'entretien
      */
     public int getSalaire() {
@@ -27,10 +29,11 @@ public class Caissier extends Employe {
 
     /**
      * Permet d'attribuer un salaire au caissier
+     *
      * @param salaire le salaire à attribuer au caissier
      */
     public void setSalaire(int salaire) {
         this.salaire = salaire;
     }
-    
+
 }

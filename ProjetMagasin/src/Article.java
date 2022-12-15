@@ -35,12 +35,13 @@ public class Article {
 
     /**
      * Crée un article possédant des informations essentiels au fonctionnement du magasin (stock, réapprovisionnement...)
-     * @param nom le nom de l'article
-     * @param prixVente le prix que l'on doit payer pour acheter l'article dans le magasin
-     * @param prixAchat le prix que doit payer le magasin pour réapprovisionner l'article
-     * @param tempsRestock la fréquence de réapprovisionnement de l'article en jours
+     *
+     * @param nom           le nom de l'article
+     * @param prixVente     le prix que l'on doit payer pour acheter l'article dans le magasin
+     * @param prixAchat     le prix que doit payer le magasin pour réapprovisionner l'article
+     * @param tempsRestock  la fréquence de réapprovisionnement de l'article en jours
      * @param nombreRestock le nombre d'articles de ce type ajoutés à chaque réapprovisionnement
-     * @param quantite la quantité actuelle de l'article
+     * @param quantite      la quantité actuelle de l'article
      */
     public Article(String nom, double prixVente, double prixAchat, int tempsRestock, int nombreRestock, int quantite) {
         this.nom = nom;
@@ -53,6 +54,7 @@ public class Article {
 
     /**
      * Permet d'obtenir le nom de l'article
+     *
      * @return le nom de l'article
      */
     public String getNom() {
@@ -61,6 +63,7 @@ public class Article {
 
     /**
      * Permet de changer le nom de l'article
+     *
      * @param nom le nouveau nom de l'article
      */
     public void setNom(String nom) {
@@ -69,6 +72,7 @@ public class Article {
 
     /**
      * Permet d'obtenir le prix de vente de l'article
+     *
      * @return le prix de vente de l'article
      */
     public double getPrixVente() {
@@ -77,6 +81,7 @@ public class Article {
 
     /**
      * Permet d'attribuer un prix de vente à l'article
+     *
      * @param prixVente le prix de vente à attribuer à l'article
      */
     public void setPrixVente(double prixVente) {
@@ -85,6 +90,7 @@ public class Article {
 
     /**
      * Permet d'obtenir le prix d'achat de l'article
+     *
      * @return le prix d'achat de l'article
      */
     public double getPrixAchat() {
@@ -93,6 +99,7 @@ public class Article {
 
     /**
      * Permet d'attribuer un prix d'achat à l'article
+     *
      * @param prixAchat le prix d'achat à attribuer à l'article
      */
     public void setPrixAchat(double prixAchat) {
@@ -101,6 +108,7 @@ public class Article {
 
     /**
      * Permet d'obtenir la fréquence de réapprovisionnement de l'article
+     *
      * @return la fréquence (en jours) de réapprovisionnement de l'article
      */
     public int getTempsRestock() {
@@ -109,6 +117,7 @@ public class Article {
 
     /**
      * Permet d'attribuer une fréquence de réapprovisionnement à l'article
+     *
      * @param tempsRestock la fréquence de réapprovisionnement à attribuer à l'article
      */
     public void setTempsRestock(int tempsRestock) {
@@ -117,6 +126,7 @@ public class Article {
 
     /**
      * Permet d'obtenir la quantité qui sera réapprovisionnée à chaque réapprovisionnement pour cet article
+     *
      * @return la quantité qui est réapprovisionnée à chaque réapprovisionnement
      */
     public int getNombreRestock() {
@@ -125,6 +135,7 @@ public class Article {
 
     /**
      * Permet d'attribuer une quantité qui sera réapprovisionnée à chaque réapprovisionnement
+     *
      * @param nombreRestock la quantité qui sera réapprovisionnée à chaque réapprovisionnement
      */
     public void setNombreRestock(int nombreRestock) {
@@ -133,6 +144,7 @@ public class Article {
 
     /**
      * Permet d'obtenir la quantité actuelle d'un produit
+     *
      * @return la quantité actuelle d'un produit
      */
     public int getQuantite() {
@@ -141,6 +153,7 @@ public class Article {
 
     /**
      * Permet d'attribuer une quantité à un produit
+     *
      * @param quantite la quantité à attribuer au produit
      */
     public void setQuantite(int quantite) {
@@ -149,6 +162,7 @@ public class Article {
 
     /**
      * Permet de retirer la quantité indiquée à l'article
+     *
      * @param quantite la quantité qui sera retirée
      */
     public void retirerQuantite(int quantite) {
