@@ -15,10 +15,4 @@ public abstract class Employe {
     public void setId(int id) {
         this.id = id;
     }
-
-
-    public int getSalaire() {
-        return salaire;
-    }
-
 }

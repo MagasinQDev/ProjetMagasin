@@ -68,9 +68,14 @@ public class Client {
     //Le client passe en caisse
     public void passageCaisse(){
         double prix = 0;
-        for (Map.Entry<String, Integer> articleActuel : panier.entrySet()) { //Parcours la Map
+        for (Map.Entry<String, Integer> articleActuel : panier.entrySet()) {
             prix += (double) articleActuel.getValue() * this.magasin.getStock().get(articleActuel.getKey()).getPrixVente();
         }
         this.magasin.setArgent(this.magasin.getArgent() + prix);
     }
+
+    public void afficherPanier() {
+        System.out.println();
+    }
+
 }
