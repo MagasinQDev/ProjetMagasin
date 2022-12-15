@@ -16,16 +16,25 @@ Le magasin aurait une note globale pouvant varier en fonction du temps d'attente
 
 ## Présentation de la simulation:
 
--Système de vague :  
-1 jour = 500 personnes en 20s  -> 15 personnes par seconde et 230 les deux dernières secondes.
+-Système de journée :  
+1 jour = 500 personnes en 20s  -> 15 personnes par seconde, suivi d'une vague de 230 les deux dernières secondes.
 
 -Pourcentage de satisfaction :  
-A chaque fin de vague, un pourcentage de satisfaction sera établi en fonction du client et des articles qu'il a pu acheter
-
--Stock dans le rouge :  
-A chaque fin de vague on liste les produits qui ont anormalement diminué.  
+A chaque fin de journée, un pourcentage de satisfaction sera établi en fonction du client et des articles qu'il a pu acheter
 
 ## Manuel d'utilisaton :  
 
-Pour utiliser notre application, il suffit d'éxecuter le fichier "simulationMagasin.jar".  
-A la fin de chaque vague (soit chaque fin de journée), l'utilisateur doit appuyer sur "c" pour continuer et enchainer sur la vague suivante, ou appuyer sur sur une autre touche pour mettre fin à la simulation.
+Pour utiliser notre application, il suffit d'éxecuter le code situé dans le fichier src du github.  
+A la fin de chaque journée (soit chaque fin de journée), l'utilisateur doit appuyer sur "c" pour continuer et enchainer sur la vague suivante, ou appuyer sur sur une autre touche pour mettre fin à la simulation.
+
+Le résumé d'une journée se présente de la manière suivante (exemple) :  
+---------------------------------------------------------------------  
+(1) Journée n°1  
+(2) Argent restant : 10114.0  
+(3) nombre Client : 245  
+(4) pourcentage Client mécontent : 4%  
+---------------------------------------------------------------------  
+Ici, le champ n°1 désigne le numéro de la journée (et donc le numéro de la vague car il y a 1 vague/jour).  
+Le champ n°2 désigne l'argent restant que possède le magasin.  
+Le champ n°3 désigne le nombre de client ayant réalisé un achat dans la magasin dans la journée.  
+Pour finir, le champ n°4 désigne le pourcentage de client mécontent (qui augmente lorsque un article est en rupture de stock ou qu'il y a de l'attente à la caisse).  
