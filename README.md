@@ -19,8 +19,13 @@ Le magasin aurait une note globale pouvant varier en fonction du temps d'attente
 -Système de vague :  
 1 jour = 500 personnes en 20s  -> 15 personnes par seconde et 230 les deux dernières secondes.
 
--Pourcentage de satisfaction : 
+-Pourcentage de satisfaction :  
 A chaque fin de vague, un pourcentage de satisfaction sera établi en fonction du client et des articles qu'il a pu acheter
 
--Stock dans le rouge:
-A chaque fin de vague on liste les produits qui ont anormalement diminué.
+-Stock dans le rouge :  
+A chaque fin de vague on liste les produits qui ont anormalement diminué.  
+
+## Manuel d'utilisaton :  
+
+Pour utiliser notre application, il suffit d'éxecuter le fichier "simulationMagasin.jar".
+A la fin de chaque vague (soit chaque fin de journée), l'utilisateur doit appuyer sur "c" pour continuer et enchainer sur la vague suivante, ou appuyer sur sur une autre touche pour mettre fin à la simulation.
