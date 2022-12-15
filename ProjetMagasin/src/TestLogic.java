@@ -115,5 +115,28 @@ public class TestLogic {
         assertFalse(c1.getPanier().containsKey("pates"));
     }
 
+    @Test
+    public void testTriPrix(){
+
+        Magasin m1 = new Magasin();
+
+        Article pates = new Article("pates", 1.12, 0.9, 1, 20, 50);
+        Article riz = new Article("riz", 1.29, 1, 2, 25, 40);
+        Article pain = new Article("pain", 0.9, 0.5, 1, 50, 50);
+        Article pomme = new Article("pomme", 0.18, 0.1, 2, 40, 40);
+        Article haricots = new Article("haricots",2.67,1.5,4,45,50);
+        Article poisson = new Article("poisson",2.99,2.2,3,25,30);
+        Article steakhache = new Article("steakhache",1.8,1.3,2,40,50);
+
+        m1.addArticle(pates, riz, pain, pomme, haricots, poisson, steakhache);
+
+        Article[] articles = m1.triParPrix();
+        Article articleActuel = articles[0];
+        for(int i = 1; i < articles.length; i++) {
+            assertTrue(articleActuel.getPrixVente() <= articles[i].getPrixVente());
+            articleActuel = articles[i];
+        }
+    }
+
 
 }
