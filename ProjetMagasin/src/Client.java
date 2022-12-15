@@ -32,14 +32,15 @@ public class Client {
         }
         // Si l'article est disponible
         else if(article.getQuantite() >= quantite) {
-            //si le panier contient déjà l'article demandé
+            //si le panier ne contient pas encore l'article
             if(!this.panier.containsKey(article.getNom())) {
                 //on enleve du stock la quantite prise
-                article.setQuantite(article.getQuantite() - quantite);
                 this.panier.put(article.getNom(), quantite);
+                article.setQuantite(article.getQuantite() - quantite);
             }
             else {
                 this.panier.replace(article.getNom(), this.panier.get(article.getNom()) + quantite);
+                article.setQuantite(article.getQuantite() - quantite);
             }
         }
         //si l'article est disponible mais pas dans la quantité voulue
@@ -47,13 +48,18 @@ public class Client {
             //Le Client est mécontant
             this.estMecontent =  true;
 
-            //Si il n'y a plus de stock
-            if(article.getQuantite() == 0){
-                System.out.println("PROBLEME STOCK: L'article " + article.getNom() + " n'est pas disponible dans la quantité demandée !");
-            }
-            //Si non on prend les derniers article restant
-            else{
-                this.panier.replace(article.getNom(), this.panier.get(article.getNom()) + article.getQuantite());
+            //on prend les derniers articles restant
+            if (article.getQuantite() > 0){
+                //si le panier ne contient pas l'article encore
+                if(!this.panier.containsKey(article.getNom())) {
+                    //on enleve du stock la quantite prise
+                    this.panier.put(article.getNom(), article.getQuantite());
+                    article.setQuantite(0);
+                }
+                else {
+                    this.panier.replace(article.getNom(), this.panier.get(article.getNom()) + article.getQuantite());
+                    article.setQuantite(0);
+                }
             }
 
         }

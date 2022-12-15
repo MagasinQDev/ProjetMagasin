@@ -34,7 +34,7 @@ public class TestLogic {
 
 
     @Test
-    public void TestRestock(){
+    public void testRestock(){
 
         Magasin m1 = new Magasin();
 
@@ -55,7 +55,7 @@ public class TestLogic {
     }
 
     @Test
-    public void Benefice(){
+    public void testBenefice(){
 
         Magasin m1 = new Magasin();
 
@@ -71,4 +71,33 @@ public class TestLogic {
         System.out.println(nombre);
     }
 
+    @Test
+    public void testAjoutProduitPanier(){
+
+        Magasin m1 = new Magasin();
+
+        Article pates = new Article("pates", 1.12, 0.9, 1, 20, 50);
+        m1.addArticle(pates);
+
+        Client c1 = new Client(1, m1);
+        c1.addArticle(pates, 10);
+        c1.passageCaisse();
+        System.out.println(c1.getPanier());
+        assertEquals("{pates=10}", c1.getPanier());
+    }
+
+    @Test
+    public void testProduitIndisponible(){
+
+        Magasin m1 = new Magasin();
+
+        Article pates = new Article("pates", 1.12, 0.9, 1, 20, 5);
+        m1.addArticle(pates);
+
+        Client c1 = new Client(1, m1);
+        c1.addArticle(pates, 10);
+        c1.passageCaisse();
+        System.out.println(c1.getPanier());
+        assertEquals("{pates=5}", c1.getPanier());
+    }
 }

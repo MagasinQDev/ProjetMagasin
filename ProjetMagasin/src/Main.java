@@ -23,36 +23,40 @@ public class Main {
         Article shampoing = new Article("shampoing",1.57,1.2,4,40,60);
         Article lessive = new Article("lessive",4.4,3.8,5,45,60);
 
-        List<Article> listArticleMagasin = Arrays.asList( pates ,riz, pain, pomme, haricots, poisson, steakhache, champagne, eau, coca, yahourt ,fromage, shampoing, lessive);
+        //List<Article> listArticleMagasin = Arrays.asList( pates ,riz, pain, pomme, haricots, poisson, steakhache, champagne, eau, coca, yahourt ,fromage, shampoing, lessive);
+
 
         m1.addArticle(pates ,riz, pain, pomme, haricots, poisson, steakhache, champagne, eau, coca, yahourt ,fromage, shampoing, lessive);
+        Article[] listArticleMagasin = m1.getStock().values().toArray(new Article[0]);
 
         // Appliquer le format au nombre
         System.out.println("------------------");
         System.out.print("Argent restant avant ouverture : ");
         System.out.println(m1.calculArgentRestant());
-        //System.out.println(pain.getQuantite());
 
         boolean continuer = true;
         int compteurVague = 0;
 
         while(continuer) {
-
             compteurVague += 1;
 
             int compteurClient = 0;
             int compteurClientMecontent = 0;
 
-            //HORS VAGUE
+            /*  HORS VAGUE  */
+
+            //18 Tours
             for (int i = 0; i < 18; ++i) {
+                //15 personnes par tour
                 for (int j = 0; i < 15; ++i) {
-                    // On générer un nombre aléatoire pour savoir ce quel article le client prend
-                    int quelArticle = rand.nextInt(listArticleMagasin.size());
-                    // On générer un nombre aléatoire pour savoir combien le client en prend
+
+                    //On générer un nombre aléatoire pour savoir ce quel article le client prend
+                    int quelArticle = rand.nextInt(listArticleMagasin.length);
+                    //On générer un nombre aléatoire pour savoir combien le client en prend
                     int quelQuantite = rand.nextInt(5);
 
                     Client c1 = new Client(i, m1);
-                    c1.addArticle(listArticleMagasin.get(quelArticle), quelQuantite);
+                    c1.addArticle(listArticleMagasin[quelArticle], quelQuantite);
                     c1.passageCaisse();
                     compteurClient += 1;
                     int val = c1.isEstMecontent() ? 1 : 0;
@@ -63,12 +67,12 @@ public class Main {
             //Vague
             for (int i = 0; i < 230; ++i) {
                 // On générer un nombre aléatoire pour savoir ce quel article le client prend
-                int quelArticle = rand.nextInt(listArticleMagasin.size());
+                int quelArticle = rand.nextInt(listArticleMagasin.length);
                 // On générer un nombre aléatoire pour savoir combien le client en prend
                 int quelQuantite = rand.nextInt(5);
 
                 Client c1 = new Client(i, m1);
-                c1.addArticle(listArticleMagasin.get(quelArticle), quelQuantite);
+                c1.addArticle(listArticleMagasin[quelArticle], quelQuantite);
                 c1.passageCaisse();
                 compteurClient += 1;
                 int val = c1.isEstMecontent() ? 1 : 0;
@@ -88,18 +92,21 @@ public class Main {
 
             Scanner monScanner = new Scanner(System.in);  // Créer l'objet scanner
             System.out.println("pour continuer, écrivez C");
-
             String reponse = monScanner.nextLine();  // Lire l'entée de l'utilisateur
-            if (!reponse.equalsIgnoreCase("c")){
+
+            //Si l'utilisateur ne veut pas continuer la simulation
+            if (!reponse.equalsIgnoreCase("c"))
+            {
                 System.out.println("OK on ferme !");
                 continuer = false;
             }
-            else{
-                ///// RESTOCK
+            //Si non on restoque et relance la simulation
+            else
+            {
+                ///// On restoque
                 System.out.println("-------RESTOCK-------");
                 m1.restock(compteurVague);
                 System.out.println("------------------");
-                /////
             }
         }
     }

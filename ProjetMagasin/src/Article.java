@@ -1,3 +1,5 @@
+import java.util.Map;
+
 public class Article {
 
     private String nom;
@@ -6,6 +8,7 @@ public class Article {
     private int tempsRestock;
     private int nombreRestock;
     private int quantite;
+
 
     public Article(String nom, double prixVente, double prixAchat, int tempsRestock, int nombreRestock, int quantite) {
         this.nom = nom;
@@ -64,8 +67,19 @@ public class Article {
         this.quantite = quantite;
     }
 
-    public void restock(){
+    public void retirerQuantite(int quantite) {
+        this.quantite -= quantite;
+    }
+
+    public void restock() {
         this.quantite += this.nombreRestock;
     }
 
+
+
+
+
+
 }
+
+
