@@ -28,12 +28,12 @@ Pour utiliser notre application, il suffit d'éxecuter le code situé dans le fi
 A la fin de chaque journée (soit chaque fin de journée), l'utilisateur doit appuyer sur "c" pour continuer et enchainer sur la vague suivante, ou appuyer sur sur une autre touche pour mettre fin à la simulation.
 
 Le résumé d'une journée se présente de la manière suivante (exemple) :  
-======================================  
-**(1) Journée n°1  
+--  
+(1) Journée n°1  
 (2) Argent restant : 10114.0  
 (3) nombre Client : 245  
-(4) pourcentage Client mécontent : 4%**  
-====================================== 
+(4) pourcentage Client mécontent : 4%   
+ --
 (1) Ici, le champ n°1 désigne le numéro de la journée (et donc le numéro de la vague car il y a 1 vague/jour).  
 (2) Le champ n°2 désigne l'argent restant que possède le magasin.  
 (3) Le champ n°3 désigne le nombre de client ayant réalisé un achat dans la magasin dans la journée.  
