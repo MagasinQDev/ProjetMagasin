@@ -27,5 +27,5 @@ A chaque fin de vague on liste les produits qui ont anormalement diminué.
 
 ## Manuel d'utilisaton :  
 
-Pour utiliser notre application, il suffit d'éxecuter le fichier "simulationMagasin.jar".
+Pour utiliser notre application, il suffit d'éxecuter le fichier "simulationMagasin.jar".  
 A la fin de chaque vague (soit chaque fin de journée), l'utilisateur doit appuyer sur "c" pour continuer et enchainer sur la vague suivante, ou appuyer sur sur une autre touche pour mettre fin à la simulation.
