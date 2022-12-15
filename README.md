@@ -17,7 +17,7 @@ Le magasin aurait une note globale pouvant varier en fonction du temps d'attente
 ## Présentation de la simulation:
 
 -Système de journée :  
-1 jour = 500 personnes en 20s  -> 15 personnes par seconde, suivi d'une vague de 230 les deux dernières secondes.
+1 jour = 500 personnes en 20 tours  -> 15 personnes par tour, suivi d'une vague de 230 les deux dernier tours.
 
 -Pourcentage de satisfaction :  
 A chaque fin de journée, un pourcentage de satisfaction sera établi en fonction du client et des articles qu'il a pu acheter
