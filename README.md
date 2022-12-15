@@ -24,7 +24,7 @@ A chaque fin de journée, un pourcentage de satisfaction sera établi en fonctio
 
 ## Manuel d'utilisaton :  
 
-Pour utiliser notre application, il suffit d'éxecuter le code situé dans le fichier src du github.  
+Pour utiliser notre application, il suffit d'exécuter le code situé dans le fichier src du github.  
 A la fin de chaque journée (soit chaque fin de journée), l'utilisateur doit appuyer sur "c" pour continuer et enchainer sur la vague suivante, ou appuyer sur sur une autre touche pour mettre fin à la simulation.
 
 Le résumé d'une journée se présente de la manière suivante (exemple) :  
