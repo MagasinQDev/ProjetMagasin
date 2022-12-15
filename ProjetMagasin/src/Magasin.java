@@ -58,9 +58,12 @@ public class Magasin {
     }
 
     public void restock(int numeroVague) {
+        //On parcourt tous les articles
         for (Map.Entry<String, Article> article : this.stock.entrySet()) {
             Article articleActuel = article.getValue();
-            if(numeroVague > 0 && (numeroVague % articleActuel.getTempsRestock()) == 0) {
+
+            //Si l'article peut etre restock (en fonction du numéro de la vague)
+            if((numeroVague % articleActuel.getTempsRestock()) == 0) {
                 articleActuel.restock();
                 System.out.println("RESTOCK: Restock de " + articleActuel.getNom() + ", quantite restockee: " + articleActuel.getNombreRestock() + ", quantite totale: " + articleActuel.getQuantite());
             }
