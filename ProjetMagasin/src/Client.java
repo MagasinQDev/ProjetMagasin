@@ -40,7 +40,7 @@ public class Client {
             }
             else {
                 this.panier.replace(article.getNom(), this.panier.get(article.getNom()) + quantite);
-                article.setQuantite(article.getQuantite() - quantite);
+                article.retirerQuantite(quantite);
             }
         }
         //si l'article est disponible mais pas dans la quantité voulue
@@ -68,14 +68,11 @@ public class Client {
     //Le client passe en caisse
     public void passageCaisse(){
         double prix = 0;
-        for (Map.Entry<String, Integer> articleActuel : panier.entrySet()) {
+        for (Map.Entry<String, Integer> articleActuel : panier.entrySet()) { //Parcours la Map
+            //Calcul du prix total du panier nbArticle*LeurPrix
             prix += (double) articleActuel.getValue() * this.magasin.getStock().get(articleActuel.getKey()).getPrixVente();
         }
+        // Ajout du bénéfice à l'argent restant du magasin
         this.magasin.setArgent(this.magasin.getArgent() + prix);
     }
-
-    public void afficherPanier() {
-        System.out.println();
-    }
-
 }
