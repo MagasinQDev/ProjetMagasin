@@ -33,9 +33,9 @@ Le résumé d'une journée se présente de la manière suivante (exemple) :
 (1) Journée n°1  
 (2) Argent restant : 10114.0  
 (3) nombre Client : 245  
-(4) pourcentage Client mécontent : 4% 
-(5) Appuyer sur c pour continuer  
- --
+(4) pourcentage clients mécontents : 4%  
+(5) Appuyer sur c pour continuer   
+ --  
 (0) C’est l’argent restant du magasin avant son ouverture (donc au début de la journée).  
 (1) Ici, le champ n°1 désigne le numéro de la journée (et donc le numéro de la vague car il y a 1 vague/jour).  
 (2) Le champ n°2 désigne l'argent restant que possède le magasin.  
