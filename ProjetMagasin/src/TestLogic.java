@@ -1,6 +1,8 @@
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+
 import java.text.DecimalFormat;
+
+import static org.junit.Assert.*;
 
 public class TestLogic {
 
@@ -82,12 +84,11 @@ public class TestLogic {
         Client c1 = new Client(1, m1);
         c1.addArticle(pates, 10);
         c1.passageCaisse();
-        System.out.println(c1.getPanier());
-        assertEquals("{pates=10}", c1.getPanier());
+        assertEquals(10, (int)c1.getPanier().get("pates"));
     }
 
     @Test
-    public void testProduitIndisponible(){
+    public void testProduitQuantiteLimitee(){
 
         Magasin m1 = new Magasin();
 
@@ -97,7 +98,22 @@ public class TestLogic {
         Client c1 = new Client(1, m1);
         c1.addArticle(pates, 10);
         c1.passageCaisse();
-        System.out.println(c1.getPanier());
-        assertEquals("{pates=5}", c1.getPanier());
+        assertEquals(5, (int)c1.getPanier().get("pates"));
     }
+
+    @Test
+    public void testProduitRuptureStock(){
+
+        Magasin m1 = new Magasin();
+
+        Article pates = new Article("pates", 1.12, 0.9, 1, 20, 0);
+        m1.addArticle(pates);
+
+        Client c1 = new Client(1, m1);
+        c1.addArticle(pates, 10);
+        c1.passageCaisse();
+        assertFalse(c1.getPanier().containsKey("pates"));
+    }
+
+
 }

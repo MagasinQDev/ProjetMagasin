@@ -25,6 +25,7 @@ public class Main {
 
         //List<Article> listArticleMagasin = Arrays.asList( pates ,riz, pain, pomme, haricots, poisson, steakhache, champagne, eau, coca, yahourt ,fromage, shampoing, lessive);
 
+        //Employe e1 = new Employe();
 
         m1.addArticle(pates ,riz, pain, pomme, haricots, poisson, steakhache, champagne, eau, coca, yahourt ,fromage, shampoing, lessive);
         Article[] listArticleMagasin = m1.getStock().values().toArray(new Article[0]);
@@ -92,7 +93,7 @@ public class Main {
 
             Scanner monScanner = new Scanner(System.in);  // Créer l'objet scanner
             System.out.println("pour continuer, écrivez C");
-            String reponse = monScanner.nextLine();  // Lire l'entée de l'utilisateur
+            String reponse = monScanner.nextLine();  // Lire l'entrée de l'utilisateur
 
             //Si l'utilisateur ne veut pas continuer la simulation
             if (!reponse.equalsIgnoreCase("c"))
@@ -101,8 +102,7 @@ public class Main {
                 continuer = false;
             }
             //Si non on restoque et relance la simulation
-            else
-            {
+            else {
                 ///// On restoque
                 System.out.println("-------RESTOCK-------");
                 m1.restock(compteurVague);
