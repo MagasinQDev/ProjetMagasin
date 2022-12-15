@@ -25,7 +25,11 @@ public class Main {
 
         //List<Article> listArticleMagasin = Arrays.asList( pates ,riz, pain, pomme, haricots, poisson, steakhache, champagne, eau, coca, yahourt ,fromage, shampoing, lessive);
 
-        //Employe e1 = new Employe();
+        Caissier cais1 = new Caissier(1);
+        Caissier cais2 = new Caissier(2);
+
+        AgentEntretien agent1 = new AgentEntretien(1);
+        AgentEntretien agent2 = new AgentEntretien(2);
 
         m1.addArticle(pates ,riz, pain, pomme, haricots, poisson, steakhache, champagne, eau, coca, yahourt ,fromage, shampoing, lessive);
         Article[] listArticleMagasin = m1.getStock().values().toArray(new Article[0]);
@@ -39,6 +43,7 @@ public class Main {
         int compteurVague = 0;
 
         while(continuer) {
+            m1.payerEmployes();
             compteurVague += 1;
 
             int compteurClient = 0;
@@ -90,6 +95,7 @@ public class Main {
             System.out.print("Pourcentage de clients mécontents: ");
             System.out.print((compteurClientMecontent * 100) / compteurClient);
             System.out.println("%");
+
 
             Scanner monScanner = new Scanner(System.in);  // Créer l'objet scanner
             System.out.println("pour continuer, écrivez C");

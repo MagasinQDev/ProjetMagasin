@@ -1,5 +1,6 @@
 public class Caissier extends Employe {
 
+    // Salaire moyen d'un caissier
     private static int salaire = 1672;
 
 

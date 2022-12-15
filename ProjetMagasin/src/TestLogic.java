@@ -138,5 +138,39 @@ public class TestLogic {
         }
     }
 
+    @Test
+    public void testPayeEmployes(){
+        Magasin m1 = new Magasin();
+        Caissier cais1 = new Caissier(1);
+        Caissier cais2 = new Caissier(2);
 
+        AgentEntretien agent1 = new AgentEntretien(1);
+        AgentEntretien agent2 = new AgentEntretien(2);
+
+        m1.addCaissier(cais1, cais2);
+        m1.addAgentEntretien(agent1, agent2);
+
+        m1.setArgent(10000);
+        m1.payerEmployes();
+        assertTrue((10000 - cais1.getSalaire() - cais2.getSalaire() - agent1.getSalaire() - agent2.getSalaire()) == m1.getArgent());
+    }
+
+
+    @Test
+    public void testInsertionMemeEmploye(){
+        Magasin m1 = new Magasin();
+        Caissier cais1 = new Caissier(1);
+        Caissier cais2 = new Caissier(2);
+        m1.addCaissier(cais1, cais2, cais1);
+        assertEquals(2, m1.getListEmployes().size());
+    }
+
+    @Test
+    public void testInsertionMemeArticle(){
+        Magasin m1 = new Magasin();
+        Article pates = new Article("pates", 1.12, 0.9, 1, 20, 50);
+        Article riz = new Article("riz", 1.29, 1, 2, 25, 40);
+        m1.addArticle(pates, riz, pates);
+        assertEquals(2, m1.getStock().size());
+    }
 }
